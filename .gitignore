@@ -205,3 +205,57 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# ==========================================
+# FLUTTER & DART
+# ==========================================
+
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+flutter_*.lock
+
+# Android specific for Flutter
+mobile/android/.gradle/
+mobile/android/captures/
+mobile/android/keystores/
+mobile/android/.idea/
+mobile/android/app/release/
+mobile/android/app/debug/
+mobile/android/local.properties
+
+# iOS specific for Flutter  
+mobile/ios/Flutter/Flutter.podspec
+mobile/ios/Flutter/Generated.xcconfig
+mobile/ios/Flutter/ephemeral/
+mobile/ios/Pods/
+mobile/ios/.symlinks/
+mobile/ios/Flutter/Flutter.framework
+mobile/ios/Flutter/Flutter.podspec
+mobile/ios/Flutter/Generated.xcconfig
+mobile/ios/Flutter/ephemeral/
+mobile/ios/Flutter/Flutter.h
+mobile/ios/Flutter/Flutter-Dynamic.podspec
+mobile/ios/Flutter/Flutter-Debug.podspec
+mobile/ios/Flutter/Flutter-Release.podspec
+mobile/ios/Flutter/Flutter-Profile.podspec
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# MacOS
+.DS_Store
+
+# Misc
+*.log
+*.tmp
+*.temp
