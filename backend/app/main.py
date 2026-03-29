@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.db.database import Base, engine
+from app.routers import auth, categories
 
 # Создаем таблицы в БД (если их нет)
 Base.metadata.create_all(bind=engine)
@@ -20,6 +21,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# === РЕГИСТРАЦИЯ РОУТОВ ===
+app.include_router(auth.router)
+app.include_router(categories.router)  
 
 @app.get("/")
 def root():
