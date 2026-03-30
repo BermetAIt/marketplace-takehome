@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime, Enum, Text
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from app.db.database import Base
 import enum
 
@@ -24,3 +25,5 @@ class User(Base):
     account_status = Column(Enum(AccountStatus), default=AccountStatus.active)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    
+    listings = relationship("Listing", back_populates="owner")

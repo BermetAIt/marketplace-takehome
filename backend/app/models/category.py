@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from app.db.database import Base
 
 class Category(Base):
@@ -11,3 +12,4 @@ class Category(Base):
     is_active = Column(Boolean, default=True)
     display_order = Column(Integer, default=0)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    listings = relationship("Listing", back_populates="category")
